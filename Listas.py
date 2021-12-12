@@ -5,7 +5,7 @@ siguiente = ""
 Titulo = "Lista de la Compra"
 print("{}\n".format(Titulo)+"-"*len(Titulo))
 
-while articulo != "Q":
+while True:
     siguiente = ""
     articulo = str(input("¿Que desea Comprar?\n"
                          "(Presione Q para salir)\n"))
