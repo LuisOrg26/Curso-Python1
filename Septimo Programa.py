@@ -32,7 +32,7 @@ while vida_pika > 0 or vida_squirt > 0:
     os.system("cls")
     print("Turno de Squirtle")
     ataque_squirt = None
-    while ataque_squirt != "P" and ataque_squirt != "A" and ataque_squirt != "B" and ataque_squirt != "N":
+    while ataque_squirt not in ["P","A","B","N"]:
         ataque_squirt = input("¿Que ataque deseas hacer?\n"
                               "P = Placaje\n"
                               "A = Pistola de agua\n"
