@@ -1,3 +1,4 @@
+#Texto de Prueba
 Compras = []
 articulo = ""
 siguiente = ""
