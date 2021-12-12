@@ -5,9 +5,10 @@ vida_pika = 80
 vida_squirt = 80
 vida_total_pika = 80
 vida_total_squirt = 80
+CANTIDAD_DE_BARRA = 10
 Titulo = ("Combate Pokemon")
 print(Titulo, "\n"+"-"*len(Titulo)+"\n")
-while vida_pika > 0 and vida_squirt > 0:
+while vida_pika > 0 or vida_squirt > 0:
     print("Turno de Pikachu")
     ataque_pika = randint(1,2)
     if ataque_pika == 1:
@@ -21,19 +22,22 @@ while vida_pika > 0 and vida_squirt > 0:
         vida_squirt = 0
     if vida_pika < 0:
         vida_pika = 0
-    barra_pika = ("["+"⬛"*(vida_pika)+"-"*(vida_total_pika-vida_pika)+"]")
-    barra_squirt = ("["+"⬛"*(vida_squirt)+"-"*(vida_total_squirt-vida_squirt)+"]")
+    valor_squirt = int(vida_squirt)*CANTIDAD_DE_BARRA/vida_total_squirt
+    valor_pika = int(vida_pika)*CANTIDAD_DE_BARRA/vida_total_pika
+    barra_pika = ("["+"⬛"*(int(valor_pika))+"-"*(int(CANTIDAD_DE_BARRA-valor_pika))+"]")
+    barra_squirt = ("["+"⬛"*(int(valor_squirt))+"-"*(int(CANTIDAD_DE_BARRA-valor_squirt))+"]")
     print("Pikachu:   {} {}\n"
           "Squirtle:   {} {}\n".format(barra_pika,vida_pika,barra_squirt,vida_squirt))
     input("Enter para continuar...\n\n")
     os.system("cls")
     print("Turno de Squirtle")
     ataque_squirt = None
-    while ataque_squirt != "P" and ataque_squirt != "A" and ataque_squirt != "B":
+    while ataque_squirt != "P" and ataque_squirt != "A" and ataque_squirt != "B" and ataque_squirt != "N":
         ataque_squirt = input("¿Que ataque deseas hacer?\n"
                               "P = Placaje\n"
                               "A = Pistola de agua\n"
-                              "B = Burbuja\n")
+                              "B = Burbuja\n"
+                              "N = Nada\n")
 
     if ataque_squirt == "P":
         print("Squirtle ataca con placaje")
@@ -44,15 +48,19 @@ while vida_pika > 0 and vida_squirt > 0:
     elif ataque_squirt == "B":
         print("Suirtle ataca con Burbuja")
         vida_pika -= 9
+    elif ataque_squirt == "N":
+        print("Squirtle no ataca")
 
     if vida_squirt < 0:
         vida_squirt = 0
     if vida_pika < 0:
         vida_pika = 0
-    barra_pika = ("["+"⬛"*(vida_pika)+"-"*(vida_total_pika-vida_pika)+"]")
-    barra_squirt = ("["+"⬛"*(vida_squirt)+"-"*(vida_total_squirt-vida_squirt)+"]")
-    print("La vida de Pikachu es de {}\n"
-          "La vida de Squirtle es de {}\n".format(barra_pika,barra_squirt))
+    valor_squirt = int(vida_squirt)*CANTIDAD_DE_BARRA/vida_total_squirt
+    valor_pika = int(vida_pika)*CANTIDAD_DE_BARRA/vida_total_pika
+    barra_pika = ("["+"⬛"*(int(valor_pika))+"-"*(int(CANTIDAD_DE_BARRA-valor_pika))+"]")
+    barra_squirt = ("["+"⬛"*(int(valor_squirt))+"-"*(int(CANTIDAD_DE_BARRA-valor_squirt))+"]")
+    print("Pikachu:   {} Vida: {}\n"
+          "Squirtle:   {} Vida: {}\n".format(barra_pika,vida_pika,barra_squirt,vida_squirt))
 
     input("Enter para continuar...\n\n")
     os.system("cls")
