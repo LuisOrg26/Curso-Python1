@@ -1,10 +1,11 @@
 
-def main(jitomates):
-    precio_del_jitomate = jitomates * 50
-    return precio_del_jitomate
+def potencia(numero):
+    pote = numero * numero
+    return pote
+
 
 
 if __name__ == "__main__":
-    cantidad =int(input("¿Cuantos jitomates tienes?"))
-    jito = main(cantidad)
-    print("El jitomate te va a costar ${} pesos".format(jito))
+    numero = int(input("Digame un numero para sacarle potencia"))
+    potenciado = potencia(numero)
+    print("La potencia del numero {} es {}".format(numero,potenciado))
