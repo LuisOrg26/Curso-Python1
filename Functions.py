@@ -19,3 +19,5 @@ if __name__ == "__main__":
         potenci = int(input("Digame cual es el exponente "))
         potenciado = potencia(numero,num_potencia=potenci)
     print("La potencia del numero {} es {}".format(numero,potenciado))
+else:
+    print("Estas importando el archivo")
