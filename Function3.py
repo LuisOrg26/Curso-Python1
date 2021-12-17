@@ -1,11 +1,8 @@
-def string_mas_larga(string,*args):
-    mayor = []
-    mayor.append(string)
-    if args:
-        for i in args:
-            mayor.append(i)
-    maximo = max(mayor,key=len)
-    return maximo
+def suma(list):
+    nuevo = 0
+    for i in list:
+        nuevo += i
+    return nuevo
 
 if __name__ == "__main__":
-    print(string_mas_larga("hola","soy","zorman"))
+    print(suma([1,5,6,7,8]))
