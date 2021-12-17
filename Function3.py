@@ -1,10 +1,10 @@
-def par_o_impar(number):
-    par = number % 2
-    if par == 1:
-        impar = True
-    if par == 0:
-        impar = False
-    return impar
+def safe(seguro):
+    if seguro == "S":
+        secure = True
+    if seguro == "N":
+        secure = False
+    return secure
 
 if __name__ == "__main__":
-    print("El numero es impar: {}".format(par_o_impar(4)))
+    secure = str(input("¿Estas seguro? (S/N)\n"))
+    print(safe(secure))
